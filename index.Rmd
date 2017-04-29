@@ -120,29 +120,40 @@ d$bcmethod_1 <- ordered(d$bcmethod_1,
 table(d$bcmethod_1)
 
 ```
-
-```{r Visualizations, echo=FALSE, message=FALSE, warning=FALSE}
+####Exploratory Data Analysis
+```{r Visualizations, echo=FALSE, message=FALSE, warning=FALSE, fig.align = "center"}
 d <- d[!is.na(d$race_1), ]
 racepie <- ggplot(d, aes(x=race_1, fill=race_1)) + geom_bar() + theme_tufte() + ggtitle("Distribution of Race in the Dataset") + labs(x="Race", y="Count") + scale_fill_discrete(name="Race")
 racepie
-
+```
+<br>
+```{r, message=FALSE, warning=FALSE, echo = FALSE, fig.align = "center"}
 sexplot <- ggplot(d, aes(x=sex_1, fill=sex_1)) + geom_bar() + theme_tufte() + ggtitle("Distribution of Sex in the Dataset") + labs(x="Sex", y="Count") + scale_fill_discrete(name="Race")
 sexplot
-
+```
+<br>
+```{r, message=FALSE, warning=FALSE, echo = FALSE, fig.align = "center"}
 d$aidstaught <- ifelse(d$H1TS8== 1, 2, 1)
 # aidsplot <- ggplot(d, aes(aidsfriends, aidschances)) + geom_point(color=as.factor(d$aidstaught), alpha=1/10) + theme_tufte() + ggtitle("Known People with Aids and Perception of Chances of Contracting Aids") + labs(x="Known People with Aids", y="Perception of chances of Contracting Aids") + facet_grid (~ aidstaught) + geom_smooth(method="loess")
 # aidsplot
-
+```
+<br>
+```{r, message=FALSE, warning=FALSE, echo = FALSE, fig.align = "center"}
 d <- d[!is.na(d$bcmethod), ]
 d <- d[!is.na(d$bcplan), ]
 bcmethodplot <- ggplot(d, aes(bcmethod_1, fill=bcplan)) + geom_bar() + theme(axis.text.x  = element_text(size=4)) + ggtitle("Birth Control Method Usage") + labs(x="Birth Control Method", y="Count") + theme_tufte() + scale_fill_discrete(name="Birth Control Method") + coord_flip()
 bcmethodplot
-
+```
+<br>
+```{r, message=FALSE, warning=FALSE, echo = FALSE, fig.align = "center"}
 d$pregsex[d$getpreg==0 & d$havesex==0] <- "Neither"
 d$pregsex[d$getpreg==0 & d$havesex==1] <- "Sex, No Pregnancy"
 d$pregsex[d$getpreg==1 & d$havesex==1] <- "Both"
 d$pregsex[d$getpreg==1 & d$havesex==0] <- "No Sex, Pregnancy"
-
+```
+<br>
+```{r, message=FALSE, warning=FALSE, echo = FALSE, fig.align = "center"}
 pregplot <- ggplot(d, aes(pregsex, fill=bcmethod)) + geom_bar() + ggtitle("Ideal Relationship Characteristics: Sex and Pregnancy") + labs(x="Characteristics", y="Count") + coord_flip() + theme_tufte() + scale_fill_discrete(name="Birth Control Method")
 pregplot
 ```
+
