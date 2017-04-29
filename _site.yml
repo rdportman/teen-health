@@ -10,6 +10,10 @@ navbar:
        - text: "School 3"
          href: school3.html
        - text: "School 11"   
+         menu:
+         - text: "Race"
+         - text: "Gender"   
+         - text: "Grade"
     - text: "Health Influences"
       href: influences.html
     - text: "State-Level Trends"
