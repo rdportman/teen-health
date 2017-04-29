@@ -1,6 +1,8 @@
 ---
 title: "Teen Population - Black"
 ---
+Data from <a href = "https://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml">American FactFinder, U.S. Census Bureau</a>:
+
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}
 
 library(leaflet)

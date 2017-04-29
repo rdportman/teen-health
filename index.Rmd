@@ -7,7 +7,7 @@ title: "Teen Sexual Health at the Turn of the Century"
 
 <img src="https://github.com/rdportman/testsite/blob/master/teenphoto.jpeg?raw=true">
 <br>
-####Introduction
+<h4>Introduction</h4>
 <br>
 This page is an exploration of the data contained in Wave 1 of the National Longitudinal Study of Adolescent to Adult Health (Add Health), which is a nationally representative sample of students in grades 7-12 in the 1994-1995 school year. We focused on teen sexual health behaviors and perceptions, placing the survey in context through social network analysis, population maps, and state-level trends in teen health outcomes. 
 <br>
@@ -125,7 +125,7 @@ table(d$bcmethod_1)
 
 ```
 <br>
-####Exploratory Data Analysis
+<h4>Exploratory Data Analysis</h4>
 <br>
 ```{r Visualizations, echo=FALSE, message=FALSE, warning=FALSE, fig.align = "center"}
 d <- d[!is.na(d$race_1), ]
