@@ -1,0 +1,46 @@
+---
+title: "Teen Population - Black"
+---
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+
+library(leaflet)
+library(rgdal)
+
+states2 <- readOGR(dsn = "tempdir", layer = "states", verbose = FALSE)
+
+#map for black
+leaflet(states2) %>%
+addProviderTiles("CartoDB.Positron") %>%
+addPolygons(group = "Map", fillColor = "white",
+color = "black",
+weight = 0.75) %>%
+setView(-98.5795, 39.8282, zoom=3)%>%
+  addPolygons(group = "Black Male 5 to 15 Years",
+    stroke = FALSE, fillOpacity = 0.5, smoothFactor = 0.5, 
+    color = ~colorQuantile("YlGnBu", BlM5_15)(BlM5_15),
+    popup = paste(states2$NAME,"<br/>",
+                  "Black Males 5 to 15 Years Old:", states2$BlM5_15, "<br/>"))%>% 
+  addPolygons(group = "Black Male 16 to 20 Years",
+    stroke = FALSE, fillOpacity = 0.5, smoothFactor = 0.5, 
+    color = ~colorQuantile("YlGnBu", BM16_20)(BM16_20),
+    popup = paste(states2$NAME,"<br/>",
+                  "Black Males 16 to 20 Years Old:", states2$BM16_20, "<br/>"))%>%
+  addPolygons(group = "Black Females 5 to 15 Years",
+    stroke = FALSE, fillOpacity = 0.5, smoothFactor = 0.5, 
+    color = ~colorQuantile("YlGnBu", BlF5_15)(BlF5_15),
+    popup = paste(states2$NAME,"<br/>",
+                  "Black Females 5 to 15 Years Old:", states2$BlF5_15, "<br/>"))%>%
+  addPolygons(group = "Black Females 16 to 20 Years",
+    stroke = FALSE, fillOpacity = 0.5, smoothFactor = 0.5, 
+    color = ~colorQuantile("YlGnBu", BF16_20)(BF16_20),
+    popup = paste(states2$NAME,"<br/>",
+                  "Black Females 16 to 20 Years Old:", states2$BF16_20, "<br/>"))%>%
+  addLegend("bottomleft", 
+    pal = colorQuantile("YlGnBu", states2$BlM5_15), values = ~BlM5_15,
+    title = "Black Population (2000)", opacity = 0.5) %>%
+    addLayersControl(
+    baseGroups = c("Map"),
+    overlayGroups = c("Black Male 5 to 15 Years","Black Male 16 to 20 Years", "Black Females 5 to 15 Years", "Black Females 16 to 20 Years"),
+    options = layersControlOptions(collapsed = TRUE) )
+```
+
