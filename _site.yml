@@ -16,6 +16,7 @@ navbar:
        - text: "School 11 - Race"
        - text: "School 11 - Gender"
        - text: "School 11 - Grade"
+         href: Grade11.html
     - text: "Health Influences"
       href: influences.html
     - text: "Population Distribution"
