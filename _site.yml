@@ -5,7 +5,7 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "School3"
+    - text: "School 3"
       href: school3.html
     - text: "Health Influences"
       href: influences.html
