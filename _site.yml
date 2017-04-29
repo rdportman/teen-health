@@ -7,8 +7,10 @@ navbar:
       href: index.html
     - text: "Networks"
       menu:
-       - text: "School 3"
+       - text: "School 3 - Race"
          href: school3.html
+       - text: "School 3 - Gender"
+       - text: "School 3 - Grade"
        - text: "School 11 - Race"
        - text: "School 11 - Gender"
        - text: "School 11 - Grade"
