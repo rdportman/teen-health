@@ -14,7 +14,9 @@ navbar:
        - text: "School 3 - Grade"
          href: Grade3.html
        - text: "School 11 - Race"
+         href: Race11.html
        - text: "School 11 - Gender"
+         href: Gender11.html
        - text: "School 11 - Grade"
          href: Grade11.html
     - text: "Health Influences"

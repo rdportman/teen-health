@@ -1,12 +1,12 @@
 ---
-title: "School 11 - Grade"
+title: "School 11- Grade"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```
 
-```{r}
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
 options(stringsAsFactors = F)
 
 
@@ -60,12 +60,7 @@ fn4 <-
                  linkDistance = 20,
                  zoom = T, 
                  opacity = 1,
-                 fontSize=24),
-    tags$script(
-      '
-      document.body.style.backgroundColor = "#000000"
-      '      
-    )
+                 fontSize=24)
     )
 fn4
 ```

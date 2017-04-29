@@ -6,7 +6,7 @@ title: "Teen Sexual Health at the Turn of the Century"
 **Contributors: Michelle Grushko, Zach Heinemann, Meredith Meeks, Becca Portman**
 
 <img src="https://github.com/rdportman/testsite/blob/master/teenphoto.jpeg?raw=true">
-
+<br>
 ####Introduction
 <br>
 This page is an exploration of the data contained in Wave 1 of the National Longitudinal Study of Adolescent to Adult Health (Add Health), which is a nationally representative sample of students in grades 7-12 in the 1994-1995 school year. We focused on teen sexual health behaviors and perceptions, placing the survey in context through social network analysis, population maps, and state-level trends in teen health outcomes. 
@@ -124,7 +124,9 @@ d$bcmethod_1 <- ordered(d$bcmethod_1,
 table(d$bcmethod_1)
 
 ```
+<br>
 ####Exploratory Data Analysis
+<br>
 ```{r Visualizations, echo=FALSE, message=FALSE, warning=FALSE, fig.align = "center"}
 d <- d[!is.na(d$race_1), ]
 racepie <- ggplot(d, aes(x=race_1, fill=race_1)) + geom_bar() + theme_tufte() + ggtitle("Distribution of Race in the Dataset") + labs(x="Race", y="Count") + scale_fill_discrete(name="Race")

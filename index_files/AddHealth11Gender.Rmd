@@ -1,0 +1,70 @@
+---
+title: "AddHealth11Gender"
+author: "Zach Heinemann"
+date: "4/29/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+```
+
+```{r}
+setwd('/Users/zachheinemann/Documents/Sheena/MBA STUDY/')
+options(stringsAsFactors = F)
+
+
+suppressMessages(library(statnet, quietly = TRUE))
+suppressMessages(library(coda, quietly = TRUE))
+suppressMessages(library(igraph, quietly = TRUE))
+suppressMessages(library(intergraph, quietly = TRUE))
+suppressMessages(library(texreg, quietly = TRUE))
+library(jsonlite)      
+library(dplyr)        
+library(igraph)        
+library(ggnetwork)     
+library(intergraph)    
+library(ggrepel)       
+library(svgPanZoom)    
+library(DT)   
+# make sure we get same results every time
+set.seed(0)
+
+graph11 <- read.graph("AddHealth11.graphml", format ="graphml")
+V(graph11)$size <- centralization.degree(graph11)$res
+graph11 <- simplify(graph11, remove.loops = TRUE, remove.multiple = FALSE)
+net11 <- asNetwork(graph11)
+
+
+set.seed(2103)
+dat <- ggnetwork(net11, layout="fruchtermanreingold", arrow.gap=0, cell.jitter=0)
+
+library(readr)
+library(networkD3)
+
+
+# Convert igraph object to object suitable for networkD3
+net11_d3 <- igraph_to_networkD3(graph11, group= get.vertex.attribute(graph11, "Sex"))
+
+# Add centrality measure and map to node size
+net11_d3$nodes$size <- centralization.degree(graph11)$res
+net11_d3$nodes$sizesq <- (net11_d3$nodes$size) ^ 2
+
+
+
+library(htmltools)
+fn4 <-
+  tagList(
+    forceNetwork(Links = net11_d3$links, Nodes = net11_d3$node,
+                 Source = 'source', Target = 'target', 
+                 NodeID = 'group', 
+                 Group = 'group', # color nodes by size
+                 charge = -25, # node repulsion
+                 Nodesize = 'sizesq',
+                 linkDistance = 20,
+                 zoom = T, 
+                 opacity = 1,
+                 fontSize=24)
+    )
+fn4
+```
