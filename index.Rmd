@@ -159,7 +159,7 @@ d$pregsex[d$getpreg==1 & d$havesex==0] <- "No Sex, Pregnancy"
 ```
 <br>
 ```{r, message=FALSE, warning=FALSE, echo = FALSE, fig.align = "center"}
-pregplot <- ggplot(d, aes(pregsex, fill=bcmethod)) + geom_bar() + ggtitle("Ideal Relationship Characteristics: Sex and Pregnancy") + labs(x="Characteristics", y="Count") + coord_flip() + theme_tufte() + scale_fill_discrete(name="Birth Control Method")
+pregplot <- ggplot(d, aes(pregsex, fill=bcmethod)) + geom_bar() + ggtitle("Ideal Relationship Characteristics: Sex and Pregnancy") + labs(x="Characteristics", y="Count") + coord_flip() + theme_tufte() + scale_fill_discrete(name="Birth Control Plan")
 pregplot
 ```
 
