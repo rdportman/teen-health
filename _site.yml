@@ -5,8 +5,11 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "School 3"
-      href: school3.html
+    - text: "Networks"
+      menu:
+       - text: "School 3"
+         href: school3.html
+       - text: "School 11"   
     - text: "Health Influences"
       href: influences.html
     - text: "State-Level Trends"
