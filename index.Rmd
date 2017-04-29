@@ -5,6 +5,144 @@ title: "Teen Sexual Health at the Turn of the Century"
 **Final Project** <br>
 **Contributors: Michelle Grushko, Zach Heinemann, Meredith Meeks, Becca Portman**
 
-Summary goes here.
-
 <img src="https://github.com/rdportman/testsite/blob/master/teenphoto.jpeg?raw=true">
+
+```{r Initial Setup, include=FALSE}
+library(readr)
+library(ggplot2)
+library(ggthemes)
+d <- read.delim("w1inhome_dvn.tab.tsv", sep = "")
+```
+
+```{r Recodes, message=FALSE, warning=FALSE, include=FALSE}
+    # Race:
+d$race <- as.factor(d$H1GI9)
+d$race_1[d$race==1] <- "White"
+d$race_1[d$race==2] <- "Black"
+d$race_1[d$race==3] <- "Native American"
+d$race_1[d$race==4] <- "Asian"
+d$race_1[d$race==5] <- "Other"
+    # Gender:
+d$sex <- as.factor(d$BIO_SEX)
+d$sex_1[d$sex==1] <- "Male"
+d$sex_1[d$sex==2] <- "Female"
+    # General health:
+table(d$H1GH1)
+d$health <- as.factor(d$H1GH1)
+table(d$health)
+    # Last date of physical exam (p.33 of survey):
+table(d$H1GH24)
+d$physicalexam <- as.factor(d$H1GH24)
+table(d$physicalexam)
+    # Chances of getting aids (p.43 of survey):
+table(d$H1GH44)
+d$aidschances <- as.numeric(d$H1GH44)
+table(d$aidschances)
+    # Friends with aids:
+table(d$H1GH45)
+d$aidsfriends <- as.numeric(d$H1GH45)
+table(d$aidsfriends)
+    # Chances of getting STD's:
+table(d$H1GH46)
+d$stdchances <- as.numeric(d$H1GH46)
+table(d$stdchances)
+    # Friends with STD's:
+table(d$H1GH47)
+d$stdfriends <- as.numeric(d$H1GH47)
+table(d$stdfriends)
+    # Topic taught in school: Pregnancy (p.50 of survey):
+table(d$H1TS7)
+d$pregtaught <- ifelse(d$H1TS7== 1, 1, 0)
+table(d$pregtaught)
+d$pregtaught <- cut(d$pregtaught, c(-1, 0, 1), labels=c("Pregnancy not taught in school", "Pregnancy taught in school"))
+table(d$pregtaught)
+    # Topic taught in school: Aids:
+table(d$H1TS8)
+d$aidstaught <- ifelse(d$H1TS8== 1, 1, 0)
+table(d$aidstaught)
+    # Hassle of protecting oneself from STD's (p.83 of survey):
+table(d$H1RP4)
+d$stdprotectionhassle <- as.numeric(7-d$H1RP4)
+table(d$stdprotectionhassle)
+d$stdprotectionhassle <- cut(d$stdprotectionhassle, c(1,2,3,4,5,6), labels=c("Strongly Disagree", "Disagree", "Neither", "Agree", "Strongly Agree"))
+table(d$stdprotectionhassle)
+    # Chances of pregnancy if not using birth control:
+table(d$H1RP5)
+d$nobcpregchance <- as.numeric(7-d$H1RP5)
+d$nobcpregchance <- cut(d$nobcpregchance, c(1,2,3,4,5,6), labels=c("Almost Certain", "A Good Chance", "A 50-50 Chance", "Some Chance", "Almost No Chance"))
+table(d$nobcpregchance)
+    # Chances of Aids if very sexually active (p.84 of survey):
+table(d$H1RP6)
+d$monthaidschance <- as.numeric(7-d$H1RP6)
+table(d$monthaidschance)
+d$monthaidschance <- cut(d$monthaidschance, c(1,2,3,4,5,6), labels=c("Almost Certain", "A Good Chance", "A 50-50 Chance", "Some Chance", "Almost No Chance"))
+table(d$monthaidschance)
+    # Planning ahead to use birth control:
+table(d$H1SE2)
+d$bcplan <- as.numeric(7-d$H1SE2)
+table(d$bcplan)
+d$bcplan <- cut(d$bcplan, c(0,1,2,3,4,5,6), labels=c("Never want to use Birth Control", "Very Unsure", "Moderately Unsure", "Neither", "Moderately Sure", "Very Sure"))
+table(d$bcplan)
+    # Ideal relationship: talk about std's (p. 239 of survey):
+table(d$H1ID1L)
+d$talkstds <- ifelse(d$H1ID1L==1, 1, 0)
+# 1 = would be ideal, 0 = not be ideal
+table(d$talkstds)
+    # Ideal relationship: have sex
+table(d$H1ID1O)
+d$havesex <- ifelse(d$H1ID1O==1, 1, 0)
+table(d$havesex)
+    # Ideal relationship: get pregnant 
+table(d$H1ID1P)
+d$getpreg <- ifelse(d$H1ID1P==1, 1, 0)
+table(d$getpreg)
+    # Birth control during first intercourse (p. 261 of survey):
+table(d$H1CO3)
+d$bc1intercourse <- ifelse(d$H1CO3==1, 1, 0)
+table(d$bc1intercourse)
+    # Birth control method:
+table(d$H1CO4A)
+d$bcmethod <- as.numeric(13-d$H1CO4A)
+table(d$bcmethod)
+d$bcmethod <- cut(d$bcmethod, c(-1,0,1,2,3,4,7,8,9,10,11,12), labels=c("Some Other Method", "Contraceptive Film", "Depo Provera", "Ring", "Norplant", "Foam/Jelly/Creme/Suppositories", "Vaginal Sponge", "Birth Control Pills", "Rhythm", "Withdrawl", "Condoms"))
+table(d$bcmethod) 
+
+d$bcmethod_1[d$bcmethod=="Some Other Method" | d$bcmethod=="Vaginal Sponge" | d$bcmethod=="Foam/Jelly/Creme/Suppositories" | d$bcmethod=="Rhythm" | d$bcmethod=="Norplant"| d$bcmethod=="Ring" | d$bcmethod=="Contraceptive Film"] <- 1
+d$bcmethod_1[d$bcmethod=="Withdrawl"] <- 2
+d$bcmethod_1[d$bcmethod=="Depo Provera"] <- 3
+d$bcmethod_1[d$bcmethod=="Birth Control Pills"] <- 4
+d$bcmethod_1[d$bcmethod=="Condoms"] <- 5
+table(d$bcmethod_1)
+
+d$bcmethod_1 <- ordered(d$bcmethod_1,
+    levels = c(1,2,3,4,5),
+    labels = c("Some Other Method", "Withdrawl", "Depo Provera", "Birth Control Pills", "Condoms"))
+table(d$bcmethod_1)
+
+```
+
+```{r Visualizations, echo=FALSE, message=FALSE, warning=FALSE}
+d <- d[!is.na(d$race_1), ]
+racepie <- ggplot(d, aes(x=race_1, fill=race_1)) + geom_bar() + theme_tufte() + ggtitle("Distribution of Race in the Dataset") + labs(x="Race", y="Count") + scale_fill_discrete(name="Race")
+racepie
+
+sexplot <- ggplot(d, aes(x=sex_1, fill=sex_1)) + geom_bar() + theme_tufte() + ggtitle("Distribution of Sex in the Dataset") + labs(x="Sex", y="Count") + scale_fill_discrete(name="Race")
+sexplot
+
+d$aidstaught <- ifelse(d$H1TS8== 1, 2, 1)
+# aidsplot <- ggplot(d, aes(aidsfriends, aidschances)) + geom_point(color=as.factor(d$aidstaught), alpha=1/10) + theme_tufte() + ggtitle("Known People with Aids and Perception of Chances of Contracting Aids") + labs(x="Known People with Aids", y="Perception of chances of Contracting Aids") + facet_grid (~ aidstaught) + geom_smooth(method="loess")
+# aidsplot
+
+d <- d[!is.na(d$bcmethod), ]
+d <- d[!is.na(d$bcplan), ]
+bcmethodplot <- ggplot(d, aes(bcmethod_1, fill=bcplan)) + geom_bar() + theme(axis.text.x  = element_text(size=4)) + ggtitle("Birth Control Method Usage") + labs(x="Birth Control Method", y="Count") + theme_tufte() + scale_fill_discrete(name="Birth Control Method") + coord_flip()
+bcmethodplot
+
+d$pregsex[d$getpreg==0 & d$havesex==0] <- "Neither"
+d$pregsex[d$getpreg==0 & d$havesex==1] <- "Sex, No Pregnancy"
+d$pregsex[d$getpreg==1 & d$havesex==1] <- "Both"
+d$pregsex[d$getpreg==1 & d$havesex==0] <- "No Sex, Pregnancy"
+
+pregplot <- ggplot(d, aes(pregsex, fill=bcmethod)) + geom_bar() + ggtitle("Ideal Relationship Characteristics: Sex and Pregnancy") + labs(x="Characteristics", y="Count") + coord_flip() + theme_tufte() + scale_fill_discrete(name="Birth Control Method")
+pregplot
+```
