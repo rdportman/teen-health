@@ -1,0 +1,64 @@
+---
+title: "School 3 - Grade"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+options(stringsAsFactors = F)
+
+
+nodes <- read.csv("AddHealth3Att.csv", header=T, as.is=T)
+links <- read.csv("AddHealth3Edge.csv", header=T, as.is=T)
+
+library(visNetwork)
+
+nodes$Race <- as.factor(nodes$Race)
+
+nodes$shape <- "dot"
+nodes$shadow <- TRUE
+nodes$label <- nodes$id
+nodes <- merge(nodes, as.data.frame(table(links$to)), by.x = "id", by.y = "Var1", all.x = TRUE)
+nodes$Freq[is.na(nodes$Freq) == TRUE]  <- 0
+nodes$size <- (nodes$Freq) ^ (7/4)
+
+nodes$title <- paste0("<p>Race: ", nodes$Race, "<br>",
+                      "Degree: ", nodes$Freq,"</p>")
+nodes$borderWidth <- 2
+nodes$color.background <- c("yellow", "orange", "green", "lightblue")[nodes$Race]
+nodes$color.border <- nodes$color.background
+nodes$color.highlight.background <- "orange"
+nodes$color.highlight.border <- "darkred"
+nodes$font.size <- 50
+nodes$group <- nodes$Race
+
+
+nodes$Sex <- as.factor(nodes$Sex)
+nodes$title <- paste0("<p>Sex: ", nodes$Sex, "<br>",
+                      "Degree: ", nodes$Freq,"</p>")
+nodes$color.background <- c("green", "lightblue")[nodes$Sex]
+nodes$color.border <- nodes$color.background
+nodes$group <- nodes$Sex
+
+nodes$Grade[nodes$Grade == "0"] <- "Not Listed"
+nodes$Grade <- as.factor(nodes$Grade)
+nodes$color.background <- c("brown", "red", "purple", "orange", "green", "lightblue","yellow")[nodes$Grade]
+nodes$color.border <- nodes$color.background
+nodes$title <- paste0("<p>Grade: ", nodes$Grade, "<br>",
+                      "Degree: ", nodes$Freq,"</p>")
+nodes$group <- nodes$Grade
+
+visNetwork(nodes, links) %>%
+  visOptions(highlightNearest = TRUE, 
+             selectedBy = "Grade") %>%
+  visGroups(groupname = "Not Listed", color = "yellow") %>%  
+  visGroups(groupname = "7", color = "orange") %>%  
+  visGroups(groupname = "8", color = "green") %>%  
+  visGroups(groupname = "9", color = "lightblue") %>%  
+  visGroups(groupname = "10", color = "brown") %>%  
+  visGroups(groupname = "11", color = "red") %>%  
+  visGroups(groupname = "12", color = "purple") %>%  
+  visLegend()
+```
