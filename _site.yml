@@ -19,8 +19,6 @@ navbar:
          href: Gender11.html
        - text: "School 11 - Grade"
          href: Grade11.html
-    - text: "Health Influences"
-      href: influences.html
     - text: "Population Distribution"
       menu:
        - text: "White Population"
@@ -31,3 +29,5 @@ navbar:
          href: othermap.html
     - text: "State-Level Trends"
       href: statetrends.html
+    - text: "Health Influences"
+      href: influences.html  
