@@ -108,11 +108,11 @@ table(d$bc1intercourse)
 table(d$H1CO4A)
 d$bcmethod <- as.numeric(13-d$H1CO4A)
 table(d$bcmethod)
-d$bcmethod <- cut(d$bcmethod, c(-1,0,1,2,3,4,7,8,9,10,11,12), labels=c("Some Other Method", "Contraceptive Film", "Depo Provera", "Ring", "Norplant", "Foam/Jelly/Creme/Suppositories", "Vaginal Sponge", "Birth Control Pills", "Rhythm", "Withdrawl", "Condoms"))
+d$bcmethod <- cut(d$bcmethod, c(-1,0,1,2,3,4,7,8,9,10,11,12), labels=c("Some Other Method", "Contraceptive Film", "Depo Provera", "Ring", "Norplant", "Foam/Jelly/Creme/Suppositories", "Vaginal Sponge", "Birth Control Pills", "Rhythm", "Withdrawal", "Condoms"))
 table(d$bcmethod) 
 
 d$bcmethod_1[d$bcmethod=="Some Other Method" | d$bcmethod=="Vaginal Sponge" | d$bcmethod=="Foam/Jelly/Creme/Suppositories" | d$bcmethod=="Rhythm" | d$bcmethod=="Norplant"| d$bcmethod=="Ring" | d$bcmethod=="Contraceptive Film"] <- 1
-d$bcmethod_1[d$bcmethod=="Withdrawl"] <- 2
+d$bcmethod_1[d$bcmethod=="Withdrawal"] <- 2
 d$bcmethod_1[d$bcmethod=="Depo Provera"] <- 3
 d$bcmethod_1[d$bcmethod=="Birth Control Pills"] <- 4
 d$bcmethod_1[d$bcmethod=="Condoms"] <- 5
@@ -120,7 +120,7 @@ table(d$bcmethod_1)
 
 d$bcmethod_1 <- ordered(d$bcmethod_1,
     levels = c(1,2,3,4,5),
-    labels = c("Some Other Method", "Withdrawl", "Depo Provera", "Birth Control Pills", "Condoms"))
+    labels = c("Some Other Method", "Withdrawal", "Depo Provera", "Birth Control Pills", "Condoms"))
 table(d$bcmethod_1)
 
 ```
