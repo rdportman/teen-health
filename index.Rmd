@@ -147,7 +147,6 @@ d$aidstaught <- ifelse(d$H1TS8== 1, 2, 1)
 # aidsplot
 ```
 <br>
-Graph 4: This graph shows the characteristics of a respondent's ideal relationship, pertaining to having sex and getting pregnant. These characteristics are then stratified by the method of birth control used. Most individuals report wanting sex but no pregnancy in a relationship, as expected. Interestingly, some individuals reported wanting no sex but pregnancy, which is obviously impossible. 
 ```{r, message=FALSE, warning=FALSE, echo = FALSE, fig.align = "center"}
 d <- d[!is.na(d$bcmethod), ]
 d <- d[!is.na(d$bcplan), ]
@@ -162,6 +161,7 @@ d$pregsex[d$getpreg==1 & d$havesex==1] <- "Both"
 d$pregsex[d$getpreg==1 & d$havesex==0] <- "No Sex, Pregnancy"
 ```
 <br>
+Graph 4: This graph shows the characteristics of a respondent's ideal relationship, pertaining to having sex and getting pregnant. These characteristics are then stratified by the method of birth control used. Most individuals report wanting sex but no pregnancy in a relationship, as expected. Interestingly, some individuals reported wanting no sex but pregnancy, which is obviously impossible. 
 ```{r, message=FALSE, warning=FALSE, echo = FALSE, fig.align = "center"}
 pregplot <- ggplot(d, aes(pregsex, fill=bcmethod)) + geom_bar() + ggtitle("Ideal Relationship Characteristics: Sex and Pregnancy") + labs(x="Characteristics", y="Count") + coord_flip() + theme_tufte() + scale_fill_discrete(name="Birth Control Plan")
 pregplot
