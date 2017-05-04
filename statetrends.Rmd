@@ -2,6 +2,6 @@
 title: "State-Level Trends"
 ---
 
-Data from the <a href = "https://www.healthindicators.gov/">National Health Indicators Warehouse</a>, <a href = "https://gis.cdc.gov/grasp/nchhstpatlas/main.html">CDC Atlas Plus</a>, and the <a href="https://www.guttmacher.org/state-policy/explore/sex-and-hiv-education">Guttmacher Institute</a>:
+The interactive below combines data from the <a href = "https://www.healthindicators.gov/">National Health Indicators Warehouse</a>, <a href = "https://gis.cdc.gov/grasp/nchhstpatlas/main.html">CDC Atlas Plus</a>, and the <a href="https://www.guttmacher.org/state-policy/explore/sex-and-hiv-education">Guttmacher Institute</a> to explore changes in teen sexual health outcomes on a state level from 2008 to 2014. 24 states and the District of Columbia mandate sex education, and 34 states and D.C. mandate HIV education. However, these graphs show that egardless of sex education policy, states exhibited similar trends in both teen birth rates and HIV diagnosis rates between 2008 and 2014. The outlier in the data set is D.C., which had extremely high rates of HIV diagnosis, particularly among black teens, and saw a significant decline in the 2008-2014 timeframe.
 
 <iframe src=" https://rdportman.shinyapps.io/app1/" style="border: none; width: 900px; height: 900px"></iframe>

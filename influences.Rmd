@@ -2,6 +2,6 @@
 title: "Teen Sexual Health Influences"
 ---
 
-Data from <a href = "http://www.cpc.unc.edu/projects/addhealth">Add Health Wave 1</a>:
+These graphs return to the <a href = "http://www.cpc.unc.edu/projects/addhealth">Add Health Wave 1</a> dataset, exploring the influence of social networks and education policy on individual sexual health attitudes and behaviors. Overall, far more students said they were taught about pregnancy and AIDs in school than were not. However, for the respondents as a whole, friends and acquaintances (measured through pressure from friends and number of friends known with AIDS) seem to have a stronger influence on sexual health attitudes (measured as perceived risk) and behaviors (measured by number of sexual partners) than sex education does. This does not always hold true, as black and latino teens appear to change their perceptions more as a result of sex education.
 
 <iframe src=" https://rdportman.shinyapps.io/app2/" style="border: none; width: 900px; height: 900px"></iframe>

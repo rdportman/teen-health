@@ -8,7 +8,7 @@ Data from <a href = "http://www.cpc.unc.edu/projects/addhealth">Add Health Wave 
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r, echo = FALSE, error = FALSE, warning = FALSE}
+```{r, echo = FALSE, error = FALSE, warning = FALSE, message = FALSE}
 options(stringsAsFactors = F)
 
 
