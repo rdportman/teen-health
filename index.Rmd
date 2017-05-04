@@ -9,7 +9,7 @@ title: "Teen Sexual Health at the Turn of the Century"
 <br>
 <h4>Introduction</h4>
 <br>
-This page is an exploration of the data contained in Wave 1 of the National Longitudinal Study of Adolescent to Adult Health (Add Health), which is a nationally representative sample of students in grades 7-12 in the 1994-1995 school year. We focused on teen sexual health behaviors and perceptions, placing the survey in context through social network analysis, population maps, and state-level trends in teen health outcomes. 
+This page is an exploration of the data contained in Wave 1 of the National Longitudinal Study of Adolescent to Adult Health (Add Health), which is a nationally representative sample of students in grades 7-12 in the 1994-1995 school year. We focused on teen sexual health behaviors and perceptions, placing the survey in context through social network analysis, population maps, and state-level trends in teen health outcomes. Because much of the data in Add Health is not publicly available, we utilized census data to add a geospatial aspect as well as national health data to compare trends in the survey with trends across the U.S. 
 <br>
 ```{r Initial Setup, include=FALSE}
 library(readr)
@@ -127,23 +127,27 @@ table(d$bcmethod_1)
 <br>
 <h4>Exploratory Data Analysis</h4>
 <br>
+Graph 1: This graph portrays the distribution of race in the dataset. As you can see, most responders where white, followed by black, then other.
 ```{r Visualizations, echo=FALSE, message=FALSE, warning=FALSE, fig.align = "center"}
 d <- d[!is.na(d$race_1), ]
 racepie <- ggplot(d, aes(x=race_1, fill=race_1)) + geom_bar() + theme_tufte() + ggtitle("Distribution of Race in the Dataset") + labs(x="Race", y="Count") + scale_fill_discrete(name="Race")
 racepie
 ```
 <br>
+Graph 2: This graph shows the distribution of sex in the dataset. There are more females than males, but only slightly so.
 ```{r, message=FALSE, warning=FALSE, echo = FALSE, fig.align = "center"}
 sexplot <- ggplot(d, aes(x=sex_1, fill=sex_1)) + geom_bar() + theme_tufte() + ggtitle("Distribution of Sex in the Dataset") + labs(x="Sex", y="Count") + scale_fill_discrete(name="Race")
 sexplot
 ```
 <br>
+Graph 3: This graph shows birth control method usage. The y-axis shows the method of birth control, and the x-axis shows the count, stratified by the respondent's birth control plan. Most people say they are very sure that they want to use birth control, followed by 'moderately sure.' Additionally, most individuals use condoms as their birth control method. This sexual health portion of the dataset was administered to individuals ages 15 and up, so it was interesting to us that relatively few individuals were using birth control pills. 
 ```{r, message=FALSE, warning=FALSE, echo = FALSE, fig.align = "center"}
 d$aidstaught <- ifelse(d$H1TS8== 1, 2, 1)
 # aidsplot <- ggplot(d, aes(aidsfriends, aidschances)) + geom_point(color=as.factor(d$aidstaught), alpha=1/10) + theme_tufte() + ggtitle("Known People with Aids and Perception of Chances of Contracting Aids") + labs(x="Known People with Aids", y="Perception of chances of Contracting Aids") + facet_grid (~ aidstaught) + geom_smooth(method="loess")
 # aidsplot
 ```
 <br>
+Graph 4: This graph shows the characteristics of a respondent's ideal relationship, pertaining to having sex and getting pregnant. These characteristics are then stratified by the method of birth control used. Most individuals report wanting sex but no pregnancy in a relationship, as expected. Interestingly, some individuals reported wanting no sex but pregnancy, which is obviously impossible. 
 ```{r, message=FALSE, warning=FALSE, echo = FALSE, fig.align = "center"}
 d <- d[!is.na(d$bcmethod), ]
 d <- d[!is.na(d$bcplan), ]

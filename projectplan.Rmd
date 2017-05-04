@@ -1,8 +1,6 @@
 ---
-title: "Data Visualization: Project Plan"
+title: "Project Plan"
 ---
-
-# Project Title: Teen Sexual Health at the Turn of the Century
 
 ## Initial Steps
 We first met as a team with an idea to study adolescent health. We had explored a few datasets, particularly the 'Add Health' national longitudinal study which encompasses four different time points. Since the survey is very large and wide-ranging, we decided to focus on sexual health issues.

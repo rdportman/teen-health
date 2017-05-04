@@ -6,6 +6,7 @@ navbar:
     - text: "Home"
       href: index.html
     - text: "Networks"
+      href: networks.html
       menu:
        - text: "School 3 - Race"
          href: Race3.html
@@ -20,6 +21,7 @@ navbar:
        - text: "School 11 - Grade"
          href: Grade11.html
     - text: "Population Distribution"
+      href: mapdescription.html
       menu:
        - text: "White Population"
          href: whitemap.html

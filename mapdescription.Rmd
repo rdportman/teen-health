@@ -1,0 +1,17 @@
+---
+title: "Maps Description"
+---
+
+One of the limitations of using the Add Health data set was that we were unable to have access to the 
+geospatial data for the schools that were used to create the network graphs. Thus, to add a geospatial
+component to the project, and provide a visualization of adolescents  throughout the United States we 
+used census data from the American FactFinder, U.S. Census Bureau to map out the population of Americans 
+aged 5-15 and 16-20.  Each map is broken up by race: White, Black, and Other. 
+
+Each map consists of four layers to include age groups broken down by gender. Thus, each map contains 
+a layer for males aged 5-15, males aged 16-20, females aged 5-15, and females aged 16-20. While the 
+age of adolescence is defined as 10-19 by the National Institute of Health, we were bound by the age 
+categories that were provided in the census data.
+
+Each map is broken down into quantiles to remain consistent throughout each map, and allow for 
+comparison. 

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Network Notes</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Teen Sexual Health and Relationships</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Networks
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Race3.html">School 3 - Race</a>
+    </li>
+    <li>
+      <a href="Gender3.html">School 3 - Gender</a>
+    </li>
+    <li>
+      <a href="Grade3.html">School 3 - Grade</a>
+    </li>
+    <li>
+      <a href="Race11.html">School 11 - Race</a>
+    </li>
+    <li>
+      <a href="Gender11.html">School 11 - Gender</a>
+    </li>
+    <li>
+      <a href="Grade11.html">School 11 - Grade</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Population Distribution
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="whitemap.html">White Population</a>
+    </li>
+    <li>
+      <a href="blackmap.html">Black Population</a>
+    </li>
+    <li>
+      <a href="othermap.html">Other Population</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="statetrends.html">State-Level Trends</a>
+</li>
+<li>
+  <a href="influences.html">Health Influences</a>
+</li>
+<li>
+  <a href="projectplan.html">Project Plan</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Network Notes</h1>
+
+</div>
+
+
+<pre><code>One of the most critical components for sexual health comes down to, perhaps obviously, who we have sex with! As such, it’s important to map out and understand the interpersonal and social networks of the students involved in our study in order to fully evaluate and contextualize some of the trends in sexual health.
+One of the biggest issues with our dataset, discussed extensively in the Project Plan, is the fact that for the sake of anonymity, many of the responses were unable to be mapped onto survey responses. As such, we only have the information of who nominated who, their race, their gender, and their grade level for the network variables. Still, understanding age, race, and gender are critical for understanding sexual relationships nonetheless (especially given prominent gender and race trends in sexual health behaviors and outcomes!).
+These graphs are interactive and made with visNetwork (better for small networks) for school 3 and with ggnetwork (better for large networks) for school 11. One of the clear trends we can see in these networks is that those who are in highschool (grades 9,10,11, and 12) appear to have more friends, appear to have more cliques, and are more popular! Indeed the 8 most popular people across the entire network are all located in the high school. Additionally, there are a handful of students with connections between the high and middle school within school 11, indicating that if anything were to spread sexually or socially, the contagion could hit both schools (as seen in Burt’s 1995 work on structural holes)! Moreover, there appears to be a tremendous amount of race and gender homophily in School 11 as well.  
+In terms of school 3, it is worth noting that many of these clustering effects disappear insofar as the entire network appears to be friends with one another. This has implications for the spread of illness across the entirety of the school. Rather, if somebody were to get sick of contract an STI, in this case it would spread likely across the whole school potentially as opposed to within one clique in School 11.
+For how to operate our graphs, it’s relatively straightforward. For the visNetwork graphs, you can drag and drop any node, you can use the dropdown list to light up nodes of a certain parameter, and when you click on a node it lights up everybody they’re connected to as well as tell them what the degree and parameter for that individual node is. For the ggnetworks, let the algorithm settle a bit and then you can hover over and it will tell what the parameter of choice is for that individual node! Enjoy!</code></pre>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
