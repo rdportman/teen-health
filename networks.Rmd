@@ -2,12 +2,12 @@
 title: "Network Notes"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 	One of the most critical components for sexual health comes down to, perhaps obviously, who we have sex with! As such, it’s important to map out and understand the interpersonal and social networks of the students involved in our study in order to fully evaluate and contextualize some of the trends in sexual health.
+	
 	One of the biggest issues with our dataset, discussed extensively in the Project Plan, is the fact that for the sake of anonymity, many of the responses were unable to be mapped onto survey responses. As such, we only have the information of who nominated who, their race, their gender, and their grade level for the network variables. Still, understanding age, race, and gender are critical for understanding sexual relationships nonetheless (especially given prominent gender and race trends in sexual health behaviors and outcomes!).
+	
 	These graphs are interactive and made with visNetwork (better for small networks) for school 3 and with ggnetwork (better for large networks) for school 11. One of the clear trends we can see in these networks is that those who are in highschool (grades 9,10,11, and 12) appear to have more friends, appear to have more cliques, and are more popular! Indeed the 8 most popular people across the entire network are all located in the high school. Additionally, there are a handful of students with connections between the high and middle school within school 11, indicating that if anything were to spread sexually or socially, the contagion could hit both schools (as seen in Burt’s 1995 work on structural holes)! Moreover, there appears to be a tremendous amount of race and gender homophily in School 11 as well.  
+	
 	In terms of school 3, it is worth noting that many of these clustering effects disappear insofar as the entire network appears to be friends with one another. This has implications for the spread of illness across the entirety of the school. Rather, if somebody were to get sick of contract an STI, in this case it would spread likely across the whole school potentially as opposed to within one clique in School 11.
+	
 	For how to operate our graphs, it’s relatively straightforward. For the visNetwork graphs, you can drag and drop any node, you can use the dropdown list to light up nodes of a certain parameter, and when you click on a node it lights up everybody they’re connected to as well as tell them what the degree and parameter for that individual node is. For the ggnetworks, let the algorithm settle a bit and then you can hover over and it will tell what the parameter of choice is for that individual node! Enjoy!
