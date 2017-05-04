@@ -31,3 +31,5 @@ navbar:
       href: statetrends.html
     - text: "Health Influences"
       href: influences.html  
+    - text: "Project Plan"
+      href: projectplan.html    

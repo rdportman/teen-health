@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Data Visualization: Project Plan</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Teen Sexual Health and Relationships</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Networks
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Race3.html">School 3 - Race</a>
+    </li>
+    <li>
+      <a href="Gender3.html">School 3 - Gender</a>
+    </li>
+    <li>
+      <a href="Grade3.html">School 3 - Grade</a>
+    </li>
+    <li>
+      <a href="Race11.html">School 11 - Race</a>
+    </li>
+    <li>
+      <a href="Gender11.html">School 11 - Gender</a>
+    </li>
+    <li>
+      <a href="Grade11.html">School 11 - Grade</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Population Distribution
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="whitemap.html">White Population</a>
+    </li>
+    <li>
+      <a href="blackmap.html">Black Population</a>
+    </li>
+    <li>
+      <a href="othermap.html">Other Population</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="statetrends.html">State-Level Trends</a>
+</li>
+<li>
+  <a href="influences.html">Health Influences</a>
+</li>
+<li>
+  <a href="projectplan.html">Project Plan</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Data Visualization: Project Plan</h1>
+
+</div>
+
+
+<div id="project-title-teen-sexual-health-at-the-turn-of-the-century" class="section level1">
+<h1>Project Title: Teen Sexual Health at the Turn of the Century</h1>
+<div id="initial-steps" class="section level2">
+<h2>Initial Steps</h2>
+<p>We first met as a team with an idea to study adolescent health. We had explored a few datasets, particularly the ‘Add Health’ national longitudinal study which encompasses four different time points. Since the survey is very large and wide-ranging, we decided to focus on sexual health issues.</p>
+</div>
+<div id="our-initial-project-proposal" class="section level2">
+<h2>Our initial project proposal:</h2>
+<p>Our project will analyze data pertaining to the health of adolescents. We are using the database ‘add health,’ which is a national longitudinal study of adolescent to adult health patterns. This dataset encompasses four different time points, and poses a variety of questions for the responder on topics such as ‘risk behavior,’ ‘reproductive health,’ ‘physical health,’ and so on. The goal of this research is to present visual patterns of these health behaviors via ggplot and network visualizations. Our main variables/topics of interest at the moment are: racial and gender dynamics in networks, gender roles/gender typed behavior, sexual knowledge of birth control methods. Furthermore, we want to perform an overall analysis of racial and gender dynamics in friendship networks. So far, we have explored our areas of interest and selected topics to analyze. The data from the survey is presented in multiple waves, as previously mentioned. To begin, we will be pulling data from the Wave 4 (2008) in-home interview file. We have downloaded this dataset as an rdata file and imputed it. The questions in wave 4 focus mainly on risk behaviors, so we may need to supplement with data from another wave. We may also do comparison of the same question over multiple waves. The main limitation with this data is that it is survey data. This possibility of self-report bias could pose a limitation to our research, as it could hinder the accuracy of our results. Furthermore, the geospatial component of our analysis may be problematic. Lastly, the variation of questions over the different waves could hinder our longitudinal comparison abilities.</p>
+</div>
+<div id="our-initial-project-plan" class="section level2">
+<h2>Our initial project plan:</h2>
+<p>Part 1: Contextualize survey + survey instruments (text analysis) + census data demographic trends Visualization 1: text analysis word cloud Visualization 2: sentiment analysis Visualization 3: map with census data race over time Visualization 4: map with census data gender over time Visualization 5: map with census data age over time Visualization 6: map with census data teen pregnancy over time</p>
+<p>Part 2: Sexual health ggplots + networks Visualization 7+more: ggplots from add health Birth control methods Questions about partners Questions about losing virginity Visualization 8: gender networks [smallest, largest] Visualization 9: race networks [smallest, largest] Visualization 10: grade networks [smallest, largest]</p>
+</div>
+</div>
+<div id="part-1-wave-1-in-home-questionnaire-visualizations" class="section level1">
+<h1>Part 1: Wave 1 In-Home Questionnaire Visualizations</h1>
+<p>This was the part of the project I (Meredith) worked on. I wanted to visualize relationships in the Wave 1 In-Home Questionnaire data that show teen sexual/risk behaviors. I was interested to find out the gender and racial background demographics of the data as an initial introduction to this section. Then, I explored the patterns in questions related to AIDS, such as “how many people do you know with aids?” “what are your perceived chances of contracting aids?” and “was the topic of aids taught in school?” as well as questions about the chances of contracting aids if one is very sexually active. By using multiple AIDS-related variables, I intended to paint a clearer picture of the topic of AIDS in teens. I also wanted to examine birth control-related questions. More specifically, I wanted to see the prevalence of birth control usage/birth control planning in sexually active couples that did not want pregnancy.</p>
+<pre class="r"><code>library(readr)
+library(ggplot2)
+library(ggthemes)
+d &lt;- read.csv(&quot;~/Desktop/21600-0001-Data.csv&quot;)
+View(d)
+ # Race:
+table(d$H1GI9)
+d$race &lt;- as.factor(d$H1GI9)
+table(d$race)
+d$race_1[d$race==1] &lt;- &quot;White&quot;
+d$race_1[d$race==2] &lt;- &quot;Black&quot;
+d$race_1[d$race==3] &lt;- &quot;Native American&quot;
+d$race_1[d$race==4] &lt;- &quot;Asian&quot;
+d$race_1[d$race==5] &lt;- &quot;Other&quot;
+table(d$race_1)
+    # Gender:
+table(d$BIO_SEX)
+d$sex &lt;- as.factor(d$BIO_SEX)
+table(d$sex)
+d$sex_1[d$sex==1] &lt;- &quot;Male&quot;
+d$sex_1[d$sex==2] &lt;- &quot;Female&quot;
+table(d$sex_1)
+    # General health:
+table(d$H1GH1)
+d$health &lt;- as.factor(d$H1GH1)
+table(d$health)
+    # Last date of physical exam (p.33 of survey):
+table(d$H1GH24)
+d$physicalexam &lt;- as.factor(d$H1GH24)
+table(d$physicalexam)
+    # Chances of getting aids (p.43 of survey):
+table(d$H1GH44)
+d$aidschances &lt;- as.numeric(d$H1GH44)
+table(d$aidschances)
+    # Friends with aids:
+table(d$H1GH45)
+d$aidsfriends &lt;- as.numeric(d$H1GH45)
+table(d$aidsfriends)
+    # Chances of getting STD&#39;s:
+table(d$H1GH46)
+d$stdchances &lt;- as.numeric(d$H1GH46)
+table(d$stdchances)
+    # Friends with STD&#39;s:
+table(d$H1GH47)
+d$stdfriends &lt;- as.numeric(d$H1GH47)
+table(d$stdfriends)
+    # Topic taught in school: Pregnancy (p.50 of survey):
+table(d$H1TS7)
+d$pregtaught &lt;- ifelse(d$H1TS7== 1, 1, 0)
+table(d$pregtaught)
+d$pregtaught &lt;- cut(d$pregtaught, c(-1, 0, 1), labels=c(&quot;Pregnancy not taught in school&quot;, &quot;Pregnancy taught in school&quot;))
+table(d$pregtaught)
+    # Topic taught in school: Aids:
+table(d$H1TS8)
+d$aidstaught &lt;- ifelse(d$H1TS8== 1, 1, 0)
+table(d$aidstaught)
+    # Hassle of protecting oneself from STD&#39;s (p.83 of survey):
+table(d$H1RP4)
+d$stdprotectionhassle &lt;- as.numeric(7-d$H1RP4)
+table(d$stdprotectionhassle)
+d$stdprotectionhassle &lt;- cut(d$stdprotectionhassle, c(1,2,3,4,5,6), labels=c(&quot;Strongly Disagree&quot;, &quot;Disagree&quot;, &quot;Neither&quot;, &quot;Agree&quot;, &quot;Strongly Agree&quot;))
+table(d$stdprotectionhassle)
+    # Chances of pregnancy if not using birth control:
+table(d$H1RP5)
+d$nobcpregchance &lt;- as.numeric(7-d$H1RP5)
+d$nobcpregchance &lt;- cut(d$nobcpregchance, c(1,2,3,4,5,6), labels=c(&quot;Almost Certain&quot;, &quot;A Good Chance&quot;, &quot;A 50-50 Chance&quot;, &quot;Some Chance&quot;, &quot;Almost No Chance&quot;))
+table(d$nobcpregchance)
+    # Chances of Aids if very sexually active (p.84 of survey):
+table(d$H1RP6)
+d$monthaidschance &lt;- as.numeric(7-d$H1RP6)
+table(d$monthaidschance)
+d$monthaidschance &lt;- cut(d$monthaidschance, c(1,2,3,4,5,6), labels=c(&quot;Almost Certain&quot;, &quot;A Good Chance&quot;, &quot;A 50-50 Chance&quot;, &quot;Some Chance&quot;, &quot;Almost No Chance&quot;))
+table(d$monthaidschance)
+    # Planning ahead to use birth control:
+table(d$H1SE2)
+d$bcplan &lt;- as.numeric(7-d$H1SE2)
+table(d$bcplan)
+d$bcplan &lt;- cut(d$bcplan, c(0,1,2,3,4,5,6), labels=c(&quot;Never want to use Birth Control&quot;, &quot;Very Unsure&quot;, &quot;Moderately Unsure&quot;, &quot;Neither&quot;, &quot;Moderately Sure&quot;, &quot;Very Sure&quot;))
+table(d$bcplan)
+    # Ideal relationship: talk about std&#39;s (p. 239 of survey):
+table(d$H1ID1L)
+d$talkstds &lt;- ifelse(d$H1ID1L==1, 1, 0)
+# 1 = would be ideal, 0 = not be ideal
+table(d$talkstds)
+    # Ideal relationship: have sex
+table(d$H1ID1O)
+d$havesex &lt;- ifelse(d$H1ID1O==1, 1, 0)
+table(d$havesex)
+    # Ideal relationship: get pregnant 
+table(d$H1ID1P)
+d$getpreg &lt;- ifelse(d$H1ID1P==1, 1, 0)
+table(d$getpreg)
+    # Birth control during first intercourse (p. 261 of survey):
+table(d$H1CO3)
+d$bc1intercourse &lt;- ifelse(d$H1CO3==1, 1, 0)
+table(d$bc1intercourse)
+    # Birth control method:
+table(d$H1CO4A)
+d$bcmethod &lt;- as.numeric(13-d$H1CO4A)
+table(d$bcmethod)
+d$bcmethod &lt;- cut(d$bcmethod, c(-1,0,1,2,3,4,7,8,9,10,11,12), labels=c(&quot;Some Other Method&quot;, &quot;Contraceptive Film&quot;, &quot;Depo Provera&quot;, &quot;Ring&quot;, &quot;Norplant&quot;, &quot;Foam/Jelly/Creme/Suppositories&quot;, &quot;Vaginal Sponge&quot;, &quot;Birth Control Pills&quot;, &quot;Rhythm&quot;, &quot;Withdrawl&quot;, &quot;Condoms&quot;))
+table(d$bcmethod) 
+
+d$bcmethod_1[d$bcmethod==&quot;Some Other Method&quot; | d$bcmethod==&quot;Vaginal Sponge&quot; | d$bcmethod==&quot;Foam/Jelly/Creme/Suppositories&quot; | d$bcmethod==&quot;Rhythm&quot; | d$bcmethod==&quot;Norplant&quot;| d$bcmethod==&quot;Ring&quot; | d$bcmethod==&quot;Contraceptive Film&quot;] &lt;- 1
+d$bcmethod_1[d$bcmethod==&quot;Withdrawl&quot;] &lt;- 2
+d$bcmethod_1[d$bcmethod==&quot;Depo Provera&quot;] &lt;- 3
+d$bcmethod_1[d$bcmethod==&quot;Birth Control Pills&quot;] &lt;- 4
+d$bcmethod_1[d$bcmethod==&quot;Condoms&quot;] &lt;- 5
+table(d$bcmethod_1)
+
+d$bcmethod_1 &lt;- ordered(d$bcmethod_1,
+    levels = c(1,2,3,4,5),
+    labels = c(&quot;Some Other Method&quot;, &quot;Withdrawl&quot;, &quot;Depo Provera&quot;, &quot;Birth Control Pills&quot;, &quot;Condoms&quot;))
+table(d$bcmethod_1)
+
+# Exploratory:
+aidsplot &lt;- ggplot(d, aes(aidsfriends, aidschances)) + geom_point(color=as.factor(d$aidstaught), alpha=1/10) + theme_tufte() + ggtitle(&quot;Known People with Aids and Perception of Chances of Contracting Aids&quot;) + labs(x=&quot;Known People with Aids&quot;, y=&quot;Perception of chances of Contracting Aids&quot;) + facet_grid (~ aidstaught) + geom_smooth(method=&quot;loess&quot;)
+aidsplot
+
+# Visualizations:
+d &lt;- d[!is.na(d$race_1), ]
+racepie &lt;- ggplot(d, aes(x=race_1, fill=race_1)) + geom_bar() + theme_tufte() + ggtitle(&quot;Distribution of Race in the Dataset&quot;) + labs(x=&quot;Race&quot;, y=&quot;Count&quot;) + scale_fill_discrete(name=&quot;Race&quot;)
+racepie
+
+sexplot &lt;- ggplot(d, aes(x=sex_1, fill=sex_1)) + geom_bar() + theme_tufte() + ggtitle(&quot;Distribution of Sex in the Dataset&quot;) + labs(x=&quot;Sex&quot;, y=&quot;Count&quot;) + scale_fill_discrete(name=&quot;Race&quot;)
+sexplot
+
+d &lt;- d[!is.na(d$bcmethod), ]
+d &lt;- d[!is.na(d$bcplan), ]
+bcmethodplot &lt;- ggplot(d, aes(bcmethod_1, fill=bcplan)) + geom_bar() + theme(axis.text.x  = element_text(size=4)) + ggtitle(&quot;Birth Control Method Usage&quot;) + labs(x=&quot;Birth Control Method&quot;, y=&quot;Count&quot;) + theme_tufte() + scale_fill_discrete(name=&quot;Birth Control Method&quot;) + coord_flip()
+bcmethodplot
+
+d$pregsex[d$getpreg==0 &amp; d$havesex==0] &lt;- &quot;Neither&quot;
+d$pregsex[d$getpreg==0 &amp; d$havesex==1] &lt;- &quot;Sex, No Pregnancy&quot;
+d$pregsex[d$getpreg==1 &amp; d$havesex==1] &lt;- &quot;Both&quot;
+d$pregsex[d$getpreg==1 &amp; d$havesex==0] &lt;- &quot;No Sex, Pregnancy&quot;
+table(d$pregsex)
+
+pregplot &lt;- ggplot(d, aes(pregsex, fill=bcmethod)) + geom_bar() + ggtitle(&quot;Ideal Relationship Characteristics: Sex and Pregnancy&quot;) + labs(x=&quot;Characteristics&quot;, y=&quot;Count&quot;) + coord_flip() + theme_tufte() + scale_fill_discrete(name=&quot;Birth Control Method&quot;)
+pregplot</code></pre>
+</div>
+<div id="geospatial-component" class="section level1">
+<h1>Geospatial Component</h1>
+<p>Michelle Grushko</p>
+<p>Using 2010 census data from American Fact Finder from the United States Census Bureau, we mapped out population estimates broken down by race, gender, and age group. Thus, each map represents a different race: White, Black, and Other, broken down by Males ages 5-15, Males ages 16-20, Females ages 5-15, Females ages 16-20.</p>
+<p>Though we initially wanted to include the age range of individuals from 10-19, the age of adolescence as defined by the NIH, we were limited to the age categories provided by the census data available. These age categories visualize the breakdown individuals in the United States per race, age, and sex. Initially, additional maps included two other racial categories: Asian and American Indian/Alaskan Native to correspond with the racial categories in the Add Health Dataset, however these were removed from the final presentation of the visualizations to cooperate with publishing maps on Shiny for presentation.</p>
+<p>In order to publish the graphs on Shiny, the shapefile was combined with the census data and rewritten as a second shapefile for reproducibility, and saved out as R objects, as seen in the code below.</p>
+<p>Further, to allow for comparison, the decision was made to graph the populations of the groups using quantiles and the same color scale, rather than using a numeric scale, with different color palettes. In addition, because each graphs contains four layers, using a quantile scale allowed for consistency in each layer, and allowed to include a single legend for each map. This was concluded after playing around with various numeric scales which were not included in the code below to save space.</p>
+<pre class="r"><code>library(tigris)
+library(leaflet)
+library(dplyr)
+library(rgdal)
+library(readr)
+
+#get the states shapefile
+states &lt;- states()
+
+#examine data
+states_data &lt;- states@data
+
+census2000 &lt;- read_csv(&quot;~/QMSS/Spring 2017/Data Visualization/Final Project/census/census2000.csv&quot;)
+
+#combine data
+combined &lt;- states@data %&gt;% left_join(census2000, by = c(&quot;NAME&quot; = &quot;Geography&quot;))
+states@data &lt;- combined
+
+#write out combined data shapefile to reproduce
+writeOGR(obj = states, dsn = &quot;~/QMSS/Spring 2017/Data Visualization/Final Project&quot;, layer = &quot;states&quot;, driver = &quot;ESRI Shapefile&quot;)
+
+#new shapefile
+states2 &lt;- readOGR(dsn = &quot;tempdir&quot;, layer = &quot;states&quot;)
+
+#map for white
+whitemap &lt;- leaflet(states2) %&gt;%
+addProviderTiles(&quot;CartoDB.Positron&quot;) %&gt;%
+addPolygons(group = &quot;Map&quot;, fillColor = &quot;white&quot;,
+color = &quot;black&quot;,
+weight = 0.75) %&gt;%
+setView(-98.5795, 39.8282, zoom=3)%&gt;%
+  addPolygons(group = &quot;White Male 5 to 15 Years&quot;,
+    stroke = FALSE, fillOpacity = 0.5, smoothFactor = 0.5, 
+    color = ~colorQuantile(&quot;YlGnBu&quot;, WhM5_15)(WhM5_15),
+    popup = paste(states2$NAME,&quot;&lt;br/&gt;&quot;,
+                  &quot;White Males 5 to 15 Years Old:&quot;, states2$WhM5_15, &quot;&lt;br/&gt;&quot;))%&gt;% 
+  addPolygons(group = &quot;White Male 16 to 20 Years&quot;,
+    stroke = FALSE, fillOpacity = 0.5, smoothFactor = 0.5, 
+    color = ~colorQuantile(&quot;YlGnBu&quot;, WM16_20)(WM16_20),
+    popup = paste(states2$NAME,&quot;&lt;br/&gt;&quot;,
+                  &quot;White Males 16 to 20 Years Old:&quot;, states2$WM16_20, &quot;&lt;br/&gt;&quot;))%&gt;%
+  addPolygons(group = &quot;White Females 5 to 15 Years&quot;,
+    stroke = FALSE, fillOpacity = 0.5, smoothFactor = 0.5, 
+    color = ~colorQuantile(&quot;YlGnBu&quot;, WhF5_15)(WhF5_15),
+    popup = paste(states2$NAME,&quot;&lt;br/&gt;&quot;,
+                  &quot;White Females 5 to 15 Years Old:&quot;, states2$WhF5_15, &quot;&lt;br/&gt;&quot;))%&gt;%
+  addPolygons(group = &quot;White Females 16 to 20 Years&quot;,
+    stroke = FALSE, fillOpacity = 0.5, smoothFactor = 0.5, 
+    color = ~colorNumeric(&quot;YlGnBu&quot;, WF16_20)(WF16_20),
+    popup = paste(states2$NAME,&quot;&lt;br/&gt;&quot;,
+                  &quot;White Females 16 to 20 Years Old:&quot;, states2$WF16_20, &quot;&lt;br/&gt;&quot;))%&gt;%
+  addLegend(&quot;bottomleft&quot;, 
+    pal = colorQuantile(&quot;YlGnBu&quot;, states2$WhM5_15), values = ~WhM5_15,
+    title = &quot;White Population (2000)&quot;, opacity = 0.5) %&gt;%
+    addLayersControl(
+    baseGroups = c(&quot;Map&quot;),
+    overlayGroups = c(&quot;White Male 5 to 15 Years&quot;,&quot;White Male 16 to 20 Years&quot;, &quot;White Females 5 to 15 Years&quot;, &quot;White Females 16 to 20 Years&quot;),
+    options = layersControlOptions(collapsed = TRUE) )
+
+#save out white map as an R file to put on shiny
+save(whitemap, file = &quot;whitemap.Rdata&quot;)
+
+#map for black
+blackmap &lt;- leaflet(states2) %&gt;%
+addProviderTiles(&quot;CartoDB.Positron&quot;) %&gt;%
+addPolygons(group = &quot;Map&quot;, fillColor = &quot;white&quot;,
+color = &quot;black&quot;,
+weight = 0.75) %&gt;%
+setView(-98.5795, 39.8282, zoom=3)%&gt;%
+  addPolygons(group = &quot;Black Male 5 to 15 Years&quot;,
+    stroke = FALSE, fillOpacity = 0.5, smoothFactor = 0.5, 
+    color = ~colorQuantile(&quot;YlGnBu&quot;, BlM5_15)(BlM5_15),
+    popup = paste(states2$NAME,&quot;&lt;br/&gt;&quot;,
+                  &quot;Black Males 5 to 15 Years Old:&quot;, states2$BlM5_15, &quot;&lt;br/&gt;&quot;))%&gt;% 
+  addPolygons(group = &quot;Black Male 16 to 20 Years&quot;,
+    stroke = FALSE, fillOpacity = 0.5, smoothFactor = 0.5, 
+    color = ~colorQuantile(&quot;YlGnBu&quot;, BM16_20)(BM16_20),
+    popup = paste(states2$NAME,&quot;&lt;br/&gt;&quot;,
+                  &quot;Black Males 16 to 20 Years Old:&quot;, states2$BM16_20, &quot;&lt;br/&gt;&quot;))%&gt;%
+  addPolygons(group = &quot;Black Females 5 to 15 Years&quot;,
+    stroke = FALSE, fillOpacity = 0.5, smoothFactor = 0.5, 
+    color = ~colorQuantile(&quot;YlGnBu&quot;, BlF5_15)(BlF5_15),
+    popup = paste(states2$NAME,&quot;&lt;br/&gt;&quot;,
+                  &quot;Black Females 5 to 15 Years Old:&quot;, states2$BlF5_15, &quot;&lt;br/&gt;&quot;))%&gt;%
+  addPolygons(group = &quot;Black Females 16 to 20 Years&quot;,
+    stroke = FALSE, fillOpacity = 0.5, smoothFactor = 0.5, 
+    color = ~colorQuantile(&quot;YlGnBu&quot;, BF16_20)(BF16_20),
+    popup = paste(states2$NAME,&quot;&lt;br/&gt;&quot;,
+                  &quot;Black Females 16 to 20 Years Old:&quot;, states2$BF16_20, &quot;&lt;br/&gt;&quot;))%&gt;%
+  addLegend(&quot;bottomleft&quot;, 
+    pal = colorQuantile(&quot;YlGnBu&quot;, states2$BlM5_15), values = ~BlM5_15,
+    title = &quot;Black Population (2000)&quot;, opacity = 0.5) %&gt;%
+    addLayersControl(
+    baseGroups = c(&quot;Map&quot;),
+    overlayGroups = c(&quot;Black Male 5 to 15 Years&quot;,&quot;Black Male 16 to 20 Years&quot;, &quot;Black Females 5 to 15 Years&quot;, &quot;Black Females 16 to 20 Years&quot;),
+    options = layersControlOptions(collapsed = TRUE) )
+
+#save out black map as an R file to put on shiny
+save(blackmap, file = &quot;blackmap.Rdata&quot;)
+
+#map for other
+othermap &lt;- leaflet(states2) %&gt;%
+addProviderTiles(&quot;CartoDB.Positron&quot;) %&gt;%
+addPolygons(group = &quot;Map&quot;, fillColor = &quot;white&quot;,
+color = &quot;black&quot;,
+weight = 0.75) %&gt;%
+setView(-98.5795, 39.8282, zoom=3)%&gt;%
+  addPolygons(group = &quot;Other Male 5 to 15 Years&quot;,
+    stroke = FALSE, fillOpacity = 0.5, smoothFactor = 0.5, 
+    color = ~colorQuantile(&quot;YlGnBu&quot;, OtM5_15)(OtM5_15),
+    popup = paste(states2$NAME,&quot;&lt;br/&gt;&quot;,
+                  &quot;Other Males 5 to 15 Years Old:&quot;, states2$OtM5_15, &quot;&lt;br/&gt;&quot;))%&gt;% 
+  addPolygons(group = &quot;Other Male 16 to 20 Years&quot;,
+    stroke = FALSE, fillOpacity = 0.5, smoothFactor = 0.5, 
+    color = ~colorQuantile(&quot;YlGnBu&quot;, OM16_20)(OM16_20),
+    popup = paste(states2$NAME,&quot;&lt;br/&gt;&quot;,
+                  &quot;Other Males 16 to 20 Years Old:&quot;, states2$OM16_20, &quot;&lt;br/&gt;&quot;))%&gt;%
+  addPolygons(group = &quot;Other Females 5 to 15 Years&quot;,
+    stroke = FALSE, fillOpacity = 0.5, smoothFactor = 0.5, 
+    color = ~colorQuantile(&quot;YlGnBu&quot;, OtF5_15)(OtF5_15),
+    popup = paste(states2$NAME,&quot;&lt;br/&gt;&quot;,
+                  &quot;Other Females 5 to 15 Years Old:&quot;, states2$OtF5_15, &quot;&lt;br/&gt;&quot;))%&gt;%
+  addPolygons(group = &quot;Other Females 16 to 20 Years&quot;,
+    stroke = FALSE, fillOpacity = 0.5, smoothFactor = 0.5, 
+    color = ~colorQuantile(&quot;YlGnBu&quot;, OF16_20)(OF16_20),
+    popup = paste(states2$NAME,&quot;&lt;br/&gt;&quot;,
+                  &quot;Other Females 16 to 20 Years Old:&quot;, states2$OF16_20, &quot;&lt;br/&gt;&quot;))%&gt;%
+  addLegend(&quot;bottomleft&quot;, 
+    pal = colorQuantile(&quot;YlGnBu&quot;, states2$OtM5_15), values = ~OtM5_15,
+    title = &quot;Other Population (2000)&quot;, opacity = 0.5) %&gt;%
+    addLayersControl(
+    baseGroups = c(&quot;Map&quot;),
+    overlayGroups = c(&quot;Other Male 5 to 15 Years&quot;,&quot;Other Male 16 to 20 Years&quot;, &quot;Other Females 5 to 15 Years&quot;, &quot;Other Females 16 to 20 Years&quot;),
+    options = layersControlOptions(collapsed = TRUE) )
+
+#save out other map as an R file to put on shiny
+save(othermap, file = &quot;othermap.Rdata&quot;)</code></pre>
+</div>
+<div id="shiny-apps" class="section level1">
+<h1>Shiny Apps</h1>
+<p>Becca Portman</p>
+<p>I was interested in contextualizing the Add Health study into broader adolescent sexual health trends across the country, so I found data on teen pregnancies from the National Health Indicators website, which I used for an earlier assignment in the class. I noticed that teen pregnancy seemed to be decreasing in every state and for every demographic, and I wondered what was causing this. I combined this data with a list from the Guttmacher Institute on Sex and HIV education policies, and was surprised to find that states with mandatory sex education seemed to be experiencing similar or even higher rates of teen births, and the same downward trend. I ended up creating a Shiny app to allow users to interact with the data so they could click on a state of interest, or view the trends at a distributional level with a box plot.</p>
+<p>Then I returned to the data to see if this observation about sex education’s lack of influence lined up with what the students in the survey said. Meredith had done some helpful exploratory data analysis looking at sex education as well as the influence of social networks–how many people the respondent knew with AIDS and how that influenced their perception of their own likelihood of contracting AIDS. I decided to apply this concept to both AIDS and teen pregnancy, and was able to find a question to serve as a proxy for peer pressure to have sex. I then created a Shiny app that allows users to explore the influence of relationships and the influence of sex education on the survey respondents’ perceptions of sexual risk and their sexual behaviors (measured in number of sexual partners). Almost across the board, teenagers seemed to be more influenced by their friends or social networks than by the presence or absence of sex education. Of note, some demographic groups did show changes in perception from sex education, such as Hispanic/Latino and Black, Non-Hispanic teens, though their behaviors did not seem to differ significantly depending on education.</p>
+<p>The process of creating a Shiny App was challenging as it required designing the reactivity ahead of time and building plots in a way that allowed for substitution for different inputs. For example, for the Influences app I created 4 datasets segmented by race, and 4 graphs (code below). I was then able to create an if/else reactive statement in the Shiny app to allow users to select the subset they were interested in.</p>
+</div>
+<div id="race-subsets" class="section level1">
+<h1>Race Subsets</h1>
+<pre class="r"><code>whitesub &lt;- d %&gt;% filter(white == 1)
+blacksub &lt;- d %&gt;% filter(black == 1)
+hispsub &lt;- d %&gt;% filter(hisp == 1)</code></pre>
+</div>
+<div id="visualizations" class="section level1">
+<h1>Visualizations:</h1>
+<pre class="r"><code>#aidsfriends, aidstaught, aidschances, STDtreat, numsexpartners
+
+#Number of People Known with AIDS vs. Perceived Risk of Contracting AIDS
+aidssub1 &lt;- d %&gt;% select(aidsfriends, aidschances)
+aidssub1 &lt;- aidssub1[complete.cases(aidssub1),]
+aidsplot &lt;- ggplot(aidssub1, aes(aidsfriends, aidschances)) + theme_tufte() + ggtitle(&quot;Number of People Known with AIDS vs. Perceived Chances of Contracting AIDS&quot;) + labs(x=&quot;People Known with AIDS&quot;, y=&quot;Perceived Chances of Contracting AIDS&quot;) + geom_smooth(color = &quot;black&quot;, method = &quot;lm&quot;) + geom_jitter(alpha=1/10, color = &quot;red&quot;)
+ggplotly(aidsplot)
+
+#Taught AIDS in School vs. Perceived Risk of Contracting AIDS
+aidssub4 &lt;- d%&gt;%select(aidstaught, aidschances)
+aidssub4 &lt;- aidssub4[complete.cases(aidssub4),]
+ggplot(aidssub4, aes(x = aidstaught, y = aidschances)) + theme_tufte() + ggtitle(&quot;AIDS Taught in School vs. Perceived Risk of Contracting AIDS&quot;) + labs(x = &quot;&quot;, y = &quot;Perceived Chances of Contracting AIDS&quot;) + geom_jitter(alpha = 1/10, color = &quot;red&quot;) + geom_boxplot(aes(group = aidstaught), alpha = .5)
+
+
+
+#Number of People Known with AIDS vs. Number of Sexual Partners
+aidssub2 &lt;- d %&gt;% select(aidsfriends, numsexpartners)
+aidssub2 &lt;- aidssub2[complete.cases(aidssub2),]
+aidsplot2 &lt;- ggplot(aidssub2, aes(aidsfriends, numsexpartners)) + theme_tufte() + ggtitle(&quot;Number of People Known with AIDS vs. Number of Sexual Partners&quot;) + labs(x=&quot;People Known with AIDS&quot;, y=&quot;Number of Sexual Partners&quot;) + geom_smooth(color = &quot;black&quot;, method = &quot;lm&quot;) + geom_jitter(alpha=1/10, color = &quot;red&quot;)
+aidsplot2
+
+#Taught AIDS in School vs. Number of Sexual Partners
+aidssub5 &lt;- d%&gt;%select(aidstaught, numsexpartners)
+aidssub5 &lt;- aidssub5[complete.cases(aidssub5),]
+ggplot(aidssub5, aes(x = aidstaught, y = numsexpartners)) + geom_jitter(alpha = 1/10, color = &quot;red&quot;) + geom_boxplot(aes(group = aidstaught), alpha = .5) + theme_tufte() + ggtitle(&quot;AIDS Taught in School vs. Number of Sexual Partners&quot;) + labs(x = &quot;&quot;, y = &quot;Number of Sexual Partners&quot;)
+
+
+#sexpressure, pregtaught, pregrisk, bc1intercourse, prenatal, numsexpartners
+
+#Pressure from Friends to Have Sex vs. Perceived Risk of Getting (Someone) Pregnant
+d$sexpressurenum &lt;- as.numeric(as.character(d$sexpressure))
+d$pregrisknum &lt;- as.numeric(as.character(d$pregrisk))
+pregfriendsub &lt;- d %&gt;% select(sexpressure, pregrisk, sexpressurenum, pregrisknum)
+pregfriendsub &lt;- pregfriendsub[complete.cases(pregfriendsub),]
+ggplot(pregfriendsub, aes(sexpressure, pregrisk)) + theme_tufte() + ggtitle(&quot;Pressure from Friends vs. Perceived Risk of Getting Pregnant from Unprotected Sex&quot;) + labs(x=&quot;Pressure from Friends to Have Sex&quot;, y=&quot;Perceived Risk&quot;) + geom_jitter(alpha = 1/10, color = &quot;blue&quot;) + geom_boxplot(aes(group = sexpressure), alpha = 0.5)
+
+#Taught Pregnancy in School vs. Perceived Risk of Getting (Someone) Pregnant
+taughtprenatalsub &lt;- d %&gt;% select(pregtaught, pregrisk)
+taughtprenatalsub &lt;- taughtprenatalsub[complete.cases(taughtprenatalsub),]
+ggplot(taughtprenatalsub, aes(x = pregtaught, y = pregrisk)) + geom_jitter(alpha = 1/10, color = &quot;blue&quot;) + geom_boxplot(aes(group = pregtaught), alpha = 0.5) + theme_tufte() + ggtitle(&quot;Pregnancy Taught in School vs. Perceived Risk of Getting (Someone) Pregnant&quot;) + labs(x = &quot;&quot;, y = &quot;Perceived Risk&quot;)
+
+#Pressure from Friends to Have Sex vs. Number of Sexual Partners
+friendpartnersub &lt;- d %&gt;% select(sexpressure, numsexpartners, sexpressurenum)
+friendpartnersub &lt;- friendpartnersub[complete.cases(friendpartnersub),]
+ggplot(friendpartnersub, aes(sexpressure, numsexpartners)) + theme_tufte() + ggtitle(&quot;Number of Sex Partners vs. Pressure from Friends to Have Sex&quot;) + labs(x= &quot;Pressure from Friends to Have Sex&quot;, y = &quot;Number of Sexual Partners&quot;) + geom_jitter(alpha = 1/10, color = &quot;blue&quot;) + geom_boxplot(aes(group = sexpressure), alpha = 0.5)
+
+
+#Taught Pregnancy in School vs. Number of Sexual Partners
+taughtpartnerssub &lt;- d %&gt;% select(pregtaught, numsexpartners)
+taughtpartnerssub &lt;- taughtpartnerssub[complete.cases(taughtpartnerssub),]
+ggplot(taughtpartnerssub, aes(x=pregtaught, y = numsexpartners)) + geom_jitter(alpha = 1/10, color = &quot;blue&quot;) + geom_boxplot(aes(group = pregtaught), alpha = 0.5) + theme_tufte() + ggtitle(&quot;Taught Pregnancy in School vs. Number of Sexual Partners&quot;) + labs(x = &quot;&quot;, y = &quot;Number of Sexual Partners&quot;)</code></pre>
+<div id="network-visualizations-zachary-heinemann" class="section level2">
+<h2>Network Visualizations, Zachary Heinemann</h2>
+<p>The issue with out networks is unfortunately that we were limited by the data – something that we weren’t quite sure would be the case until quite late into the project process.</p>
+<p>Specifically, information such as the edges [who nominated who] were made available as well as the race, gender, and grade of each person who did the nominating – but that was it! There was no identifying information to link any student with any of their other responses in the survey [unless we were to receive access through an application].</p>
+<p>Another critical consideration about this network data is that it is spread across many schools or school districts, and we had to make some choices as to which to visualize. Our initial idea was to do some visualizations of the smallest school, school 3, and the largest school, school 84, to get a sense of the demographic trends in these schools. While Race, Gender, and Grade are still somewaht limiting, these are all factors that previous literature has shown to be very critically related to health outcomes – and could still be useful for understanding some of our other findings if nothing else to provide the behavioral context.</p>
+<p>As for the mechanics of the networks, we ran into a few issues here as well. Network 84 is actually too large to really visualize well [400+ nodes, 1700 edges]. I will not show some of the original visualizations here because they are so large that it actually is cumbersome to show and sometimes crashed my R! However, we played with using ggnetwork, as was done in class with Hillary’s emails, for these networks, but they were not informative nor were they particularly helpful, sadly.</p>
+<p>From here, we instead pivoted to the usage of the medium sized network, network 11. We began first with some static visualizations of the network like such:</p>
+<pre class="r"><code>options(stringsAsFactors = F)
+
+
+suppressMessages(library(statnet, quietly = TRUE))
+suppressMessages(library(coda, quietly = TRUE))
+suppressMessages(library(igraph, quietly = TRUE))
+suppressMessages(library(intergraph, quietly = TRUE))
+suppressMessages(library(texreg, quietly = TRUE))
+library(jsonlite)      
+library(dplyr)        
+library(igraph)        
+library(ggnetwork)     
+library(intergraph)    
+library(ggrepel)       
+library(svgPanZoom)    
+library(DT)   
+# make sure we get same results every time
+set.seed(0)
+
+graph11 &lt;- read.graph(&quot;AddHealth11.graphml&quot;, format =&quot;graphml&quot;)
+V(graph11)$size &lt;- centralization.degree(graph11)$res
+graph11 &lt;- simplify(graph11, remove.loops = TRUE, remove.multiple = FALSE)
+net11 &lt;- asNetwork(graph11)
+
+
+set.seed(2103)
+dat &lt;- ggnetwork(net11, layout=&quot;fruchtermanreingold&quot;, arrow.gap=0, cell.jitter=0)
+
+library(readr)
+write_csv(dat,&quot;dat.csv&quot;)
+dat &lt;- read_csv(&quot;dat.csv&quot;)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   x = col_double(),
+##   y = col_double(),
+##   Grade = col_integer(),
+##   id.x = col_integer(),
+##   label = col_integer(),
+##   na.x = col_logical(),
+##   Race = col_character(),
+##   School = col_integer(),
+##   Sex = col_character(),
+##   size = col_double(),
+##   vertex.names = col_integer(),
+##   xend = col_double(),
+##   yend = col_double(),
+##   id.y = col_character(),
+##   na.y = col_logical()
+## )</code></pre>
+<pre class="r"><code>dat &lt;- dplyr::as_data_frame(dat)
+dat$vertex.names &lt;- as.character(dat$vertex.names)
+
+
+dat$Grade &lt;- as.factor(dat$Grade)
+
+(gg1 &lt;- ggplot() +
+    geom_edges(data=dat, 
+               aes(x=x, y=y, xend=xend, yend=yend)) +
+    geom_nodes(data=dat,
+               aes(x=x, y=y, xend=xend, yend=yend)) )</code></pre>
+<pre><code>## Warning: Ignoring unknown aesthetics: xend, yend</code></pre>
+<p><img src="projectplan_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre class="r"><code>(gg2 &lt;- gg1 +
+    geom_label_repel(data=unique(dat[dat$size&gt;24,c(1,2,11)]),
+                     aes(x=x, y=y, label=vertex.names), 
+                     size=2, color=&quot;#8856a7&quot;))</code></pre>
+<p><img src="projectplan_files/figure-html/unnamed-chunk-5-2.png" width="672" /></p>
+<pre class="r"><code>## Remove background / axes etc. 
+(gg3 &lt;- gg2 +   
+    theme_blank() +
+    theme(legend.position=&quot;none&quot;)  )</code></pre>
+<p><img src="projectplan_files/figure-html/unnamed-chunk-5-3.png" width="672" /></p>
+<pre class="r"><code>(gg4 &lt;- ggplot() +
+    geom_edges(data=dat, 
+               aes(x=x, y=y, xend=xend, yend=yend),
+               color=&quot;grey50&quot;, curvature=0.1, size=0.15, alpha=1/2) +
+    geom_nodes(data=dat,
+               aes(x=x, y=y, xend=xend, yend=yend)) +
+    geom_label_repel(data=unique(dat[dat$size&gt;24,c(1,2,11)]),
+                     aes(x=x, y=y, label=vertex.names), 
+                     size=2, color=&quot;#8856a7&quot;) +
+    theme_blank() +
+    theme(legend.position=&quot;none&quot;))</code></pre>
+<pre><code>## Warning: Ignoring unknown aesthetics: xend, yend</code></pre>
+<p><img src="projectplan_files/figure-html/unnamed-chunk-5-4.png" width="672" /></p>
+<pre class="r"><code>(gg5 &lt;- ggplot() +
+    geom_edges(data=dat, 
+               aes(x=x, y=y, xend=xend, yend=yend),
+               color=&quot;grey50&quot;, curvature=0.1, size=0.15, alpha=1/2) +
+    geom_nodes(data=dat,
+               aes(x=x, y=y, xend=xend, yend=yend, size=(size^(1/3))),
+               alpha=1/4) +
+    geom_label_repel(data=unique(dat[dat$size&gt;20,c(1,2,11)]),
+                     aes(x=x, y=y, label=vertex.names), 
+                     size=2, color=&quot;#8856a7&quot;) +
+    theme_blank() +
+    theme(legend.position=&quot;none&quot;))</code></pre>
+<pre><code>## Warning: Ignoring unknown aesthetics: xend, yend</code></pre>
+<p><img src="projectplan_files/figure-html/unnamed-chunk-5-5.png" width="672" /></p>
+<pre class="r"><code>(gg5 &lt;- ggplot() +
+    geom_edges(data=dat, 
+               aes(x=x, y=y, xend=xend, yend=yend),
+               color=&quot;grey50&quot;, curvature=0.1, size=0.15, alpha=3/4) +
+    geom_nodes(data=dat,
+               aes(x=x, y=y,color = Grade, xend=xend, yend=yend, size=size),
+               alpha=1/4) +
+    geom_label_repel(data=unique(dat[dat$size&gt;20,c(1,2,11)]),
+                     aes(x=x, y=y, label=vertex.names), 
+                     size=2, color=&quot;#8856a7&quot;) +
+    theme_blank())</code></pre>
+<pre><code>## Warning: Ignoring unknown aesthetics: xend, yend</code></pre>
+<p><img src="projectplan_files/figure-html/unnamed-chunk-5-6.png" width="672" /></p>
+<p>This provides some key insights – namely that 8 of the 10 most popular people are located in the high school as opposed to the 2 in middle school! This could explain some of the increase in risky sexual health behaviors in high school students in addition to puberty, sexual maturation, etc.</p>
+<p>In terms of the small network, network 3, the visualization was actually a pretty smooth process (which is why there are no prior visualizations). This was all done using the visNetwork package, which is advertised as being ideal for smaller networks. If one looks in the code, you’ll find that the graphs are actually pretty simple to make and allow for a range of interactive features; one of the only major aesthetic changes that was created was the manual addition of the legend and degree. I figure it would be helpful visually to also know the degree of the most popular students and even though hovering over or selecting the category in quesiton makes it obvious what color represents what, it may be worth having it in the form of a legend as well for the ease of interpretation!</p>
+</div>
+<div id="text-cloud-visualizations-zachary-heinemann" class="section level2">
+<h2>Text Cloud Visualizations, Zachary Heinemann</h2>
+<p>We had another thought to perhaps include text analysis with regard to the questions. Our idea was that in public health questionnaires, there is often an accidental propensity to be very negative, as this research is typically focused on negative health outcomes, and see if it would be meaningful to map this out over the course of the survey.</p>
+<p>The reason why this was not included, however, is that sadly mining this data from the questionnaire provided to be pretty fruitfless. The short answer is that getting just the questions out of the questionnaire PDF and not all of the choices as well as the breakdown of the responses, which the document comes with and cannot appear to be stripped of, meant that there was not much useful information without a tremendous amount of mining and cleaning up the data that we agreed would be relatively fruitfless in the end with regard to the overall theme and ideas of the project; hence, there are no text visualizations.</p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
